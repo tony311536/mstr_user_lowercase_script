@@ -17,6 +17,8 @@
 
 ## 安装依赖
 
+建议使用 Python 3.10 或更高版本。新版 `mstrio-py` 在 PyPI 上要求 Python `>=3.10,<3.14`。
+
 ```bash
 pip install -r requirements.txt
 ```
@@ -33,7 +35,17 @@ export MSTR_PASSWORD="your-password"
 
 也可以直接编辑 `mstr_user_lowercase.py` 顶部的 `CONFIG` 配置区，将占位符替换成你的 Library URL、用户名和密码。
 
-## 运行
+## 推荐运行方式：Notebook
+
+推荐使用 Notebook 逐步执行、逐步确认：
+
+```bash
+jupyter notebook mstr_user_lowercase_notebook.ipynb
+```
+
+Notebook 会按 cell 拆分流程：登录、列出用户、筛选大写用户、确认是否剔除平台自带用户、预览变更、最终执行、复查结果。
+
+## 命令行运行
 
 ```bash
 python mstr_user_lowercase.py

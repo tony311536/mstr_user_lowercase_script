@@ -1,2 +1,2 @@
-mstrio-py>=11.6.0
+mstrio-py>=11.6.5.101,<12
 pandas>=2.0.0

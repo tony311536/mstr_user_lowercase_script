@@ -135,7 +135,12 @@ def print_user_list(df: pd.DataFrame, title: str) -> None:
 
 def find_uppercase_users(df: pd.DataFrame) -> pd.DataFrame:
     text_columns = ["display_name", "full_name", "login_id", "account_login", "trust_id"]
-    mask = df[text_columns].applymap(has_uppercase).any(axis=1)
+    selected = df[text_columns]
+    if hasattr(selected, "map"):
+        uppercase_cells = selected.map(has_uppercase)
+    else:
+        uppercase_cells = selected.applymap(has_uppercase)
+    mask = uppercase_cells.any(axis=1)
     return df[mask].copy()
 
 
