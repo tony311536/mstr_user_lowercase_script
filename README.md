@@ -266,6 +266,18 @@ all
 🎉 恭喜，批处理脚本运行成功！
 ```
 
+### Step 9：🔚 关闭 MSTR 连接
+
+运行完成并复查成功后，请执行此 cell 显式释放 MSTR session。
+
+Notebook 会按顺序尝试常见关闭方法：
+
+- `connection.close()`
+- `connection.logout()`
+- `connection.disconnect()`
+
+如果当前 `mstrio-py` 版本没有暴露这些方法，Notebook 会提示关闭 kernel，并依赖 MSTR 服务端 session timeout 自动清理。
+
 ## 6. 运行前检查清单
 
 执行前请确认：
@@ -283,6 +295,7 @@ all
 
 - ✅ Step 7 的 `success` 全部为 `True`。
 - ✅ Step 8 当前大写用户列表中不再包含本批次目标用户。
+- ✅ Step 9 已关闭 MSTR 连接，或已关闭 Notebook kernel。
 - ✅ 可在 MSTR 管理界面抽查用户显示名、登录 ID、受信任验证请求用户 ID。
 - ✅ 保存 Step 6 预览和 Step 7 结果，作为变更记录。
 
