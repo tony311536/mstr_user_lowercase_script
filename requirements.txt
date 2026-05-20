@@ -1,2 +1,5 @@
 mstrio-py>=11.6.5.101,<12
 pandas>=2.0.0
+ipython>=8.0.0
+ipykernel>=6.0.0
+notebook>=7.0.0
