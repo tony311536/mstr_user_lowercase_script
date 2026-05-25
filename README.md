@@ -248,6 +248,10 @@ all
 - Step 6 变更清单正确。
 - Step 6 未提示冲突。
 
+兼容性说明：
+
+- Notebook 不传 `journal_comment` 参数，因为部分客户环境的 MSTR 版本会报 `Change journal comments require at least version 11.5.0900`。
+
 ### Step 8A：🔁 复查当前仍包含大写 login_id 的用户
 
 重新获取轻量用户摘要，只检查当前仍包含大写字母的 `login_id`。
